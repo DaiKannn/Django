@@ -61,15 +61,15 @@ def formulairebibliotheque(request):
 
 def affichebibliotheque(request, id):
     bibli = models.Bibliotheque.objects.get(pk=id)
-    return render(request, "livre/affichebibliotheque.html", {"Bibliotheque": bibli})
+    return render(request, "Bibliotheque/affichebibliotheque.html", {"Bibliotheque": bibli})
 
 def traitementbibliotheque(request):
     pForm = BibliothequeForm(request.POST)
     if pForm.is_valid():
         Bibliotheque = pForm.save()
-        return HttpResponseRedirect("/livre/affichebibliotheque")
+        return HttpResponseRedirect(f"/livre/affichebibliotheque/{Bibliotheque.id}/ ")
     else:
-        return render(request, 'livre/traitementbibliotheque.html', {'form': pForm})
+        return render(request, 'Bibliotheque/traitementbibliotheque.html', {'form': pForm})
 
 def updatebibliotheque(request, id):
     Bibliotheque = models.Bibliotheque.objects.get(pk=id)
