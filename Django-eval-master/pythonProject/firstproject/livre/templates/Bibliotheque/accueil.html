@@ -6,6 +6,12 @@
 </head>
 <body>
 <h1> Bienvenue dans la bibliothèque des Universitées de France</h1>
-<a href="/livre/affiche.html"> Livre dans la bibliothèque </a>
+ Voici les universitées ajoutées
+<ul>
+{% for l in liste %}
+<li>{{l}} <a href="/livre/affichebibliotheque/{{l.id}}"> affiche </a> <a href="/livre/updatebibliotheque/{{l.id}}"> update </a> <a href="/livre/deletebibliotheque/{{l.id}}"> delete </a></li>
+
+{% endfor %}
+    </ul>
 </body>
 </html>
