@@ -14,7 +14,7 @@ urlpatterns = [
     path ("traitementbibliotheque/", views.traitementbibliotheque),
     path("updatebibliotheque/<int:id>/", views.updatebibliotheque),
     path("updatetraitementbibliotheque/<int:id>/", views.updatetraitementbibliotheque),
-    path ("deletebibliotheque/<int:id/", views.deletebibliotheque)
+    path ("deletebibliotheque/<int:id>/", views.deletebibliotheque)
 
 ]
 

@@ -74,7 +74,7 @@ def traitementbibliotheque(request):
 def updatebibliotheque(request, id):
     Bibliotheque = models.Bibliotheque.objects.get(pk=id)
     form = BibliothequeForm(Bibliotheque.dico())
-    return render(request,"livre/formulairebibliotheque.html",{"form":form, "id": id})
+    return render(request,"Bibliotheque/formulairebibliotheque.html",{"form":form, "id": id})
 
 def updatetraitementbibliotheque(request, id):
     pform = BibliothequeForm(request.POST)
@@ -84,12 +84,12 @@ def updatetraitementbibliotheque(request, id):
         Bibliotheque.save()
         return HttpResponseRedirect ("/livre/")
     else:
-        return render(request, "livre/formulairebibliotheque.html", {"form":pform, "id": id})
+        return render(request, "Bibliotheque/formulairebibliotheque.html", {"form":pform, "id": id})
 
 def deletebibliotheque(request, id):
     Bibliotheque = models.Bibliotheque.objects.get(pk=id)
     Bibliotheque.delete()
-    return HttpResponseRedirect("/livre/")
+    return HttpResponseRedirect("/livre/accueil")
 
 
 
