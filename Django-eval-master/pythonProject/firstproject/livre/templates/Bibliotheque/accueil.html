@@ -9,9 +9,10 @@
  Voici les universitées ajoutées
 <ul>
 {% for l in liste %}
-<li>{{l}} <a href="/livre/affichebibliotheque/{{l.id}}"> affiche </a> <a href="/livre/updatebibliotheque/{{l.id}}"> update </a> <a href="/livre/deletebibliotheque/{{l.id}}"> delete </a></li>
+<li>{{l}} <a href="/livre/affichebibliotheque/{{l.id}}/"> affiche </a> <a href="/livre/updatebibliotheque/{{l.id}}/"> update </a> <a href="/livre/deletebibliotheque/{{l.id}}/"> delete </a></li>
 
 {% endfor %}
     </ul>
+<a href ="/livre/formulairebibliotheque/"> ajouter une bibliothèque</a>
 </body>
 </html>

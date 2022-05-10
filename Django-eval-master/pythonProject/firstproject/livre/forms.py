@@ -5,11 +5,12 @@ from . import models
 class LivreForm(ModelForm):
     class Meta:
         model = models.Livre
-        fields = ('titre', 'auteur', 'date_parution', 'nombres_pages','resume')
+        fields = ('titre', 'auteur', 'date_parution', 'bibliotheque', 'nombres_pages','resume')
         labels = {
             'titre' : _('Titre'),
             'auteur' : _('Auteur') ,
             'date_parution' : _('date␣de␣parution'),
+            'bibliotheque' : _("Bibliotheque Universitaire"),
             'nombres_pages' : _('nombres␣de␣pages'),
             'resume' : _('Résumé')
         }
@@ -24,5 +25,15 @@ class BibliothequeForm(ModelForm):
             'Departement': _('Departement'),
             'nombres_de_livres': _('nombres_de_livres'),
         }
-
+class LivreInstantForm(ModelForm):
+    class Meta:
+        model = models.Livre
+        fields = ('titre', 'auteur', 'date_parution', 'nombres_pages','resume')
+        labels = {
+            'titre' : _('Titre'),
+            'auteur' : _('Auteur') ,
+            'date_parution' : _('date␣de␣parution'),
+            'nombres_pages' : _('nombres␣de␣pages'),
+            'resume' : _('Résumé'),
+        }
 

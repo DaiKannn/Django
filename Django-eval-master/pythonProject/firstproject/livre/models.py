@@ -4,6 +4,7 @@ class Livre(models.Model):
         titre = models.CharField(max_length=100)
         auteur = models.CharField(max_length=100)
         date_parution = models.DateField(blank=True, null=True)
+        bibliotheque = models.ForeignKey("Bibliotheque", on_delete=models.CASCADE, null=True)
         nombres_pages = models.IntegerField(blank=False)
         resume = models.TextField(null=True, blank=True)
 

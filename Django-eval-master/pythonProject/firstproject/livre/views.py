@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .forms import LivreForm, BibliothequeForm
+from .forms import LivreForm, BibliothequeForm, LivreInstantForm
 from .import models
 
 
@@ -67,7 +67,7 @@ def traitementbibliotheque(request):
     pForm = BibliothequeForm(request.POST)
     if pForm.is_valid():
         Bibliotheque = pForm.save()
-        return HttpResponseRedirect(f"/livre/affichebibliotheque/{Bibliotheque.id}/ ")
+        return HttpResponseRedirect(f"/livre/affichebibliotheque/{Bibliotheque.id}/")
     else:
         return render(request, 'Bibliotheque/traitementbibliotheque.html', {'form': pForm})
 
@@ -90,6 +90,25 @@ def deletebibliotheque(request, id):
     Bibliotheque = models.Bibliotheque.objects.get(pk=id)
     Bibliotheque.delete()
     return HttpResponseRedirect("/livre/accueil")
+
+def formulaireinstant(request,id):
+
+            form = LivreInstantForm()
+            return render(request, 'livre/formulaireinstant.html', {'form': form, "id":id})
+
+def traitementinstant(request,id):
+    if request.method=="POST":
+        pForm = LivreInstantForm(request.POST)
+        if pForm.is_valid():
+            livre = pForm.save(commit=False)
+            livre.bibliotheque_id=id
+            livre.bibliotheque=models.Bibliotheque.objects.get(pk=id)
+            livre.save()
+            return render(request, 'livre/traitementinstant.html', {'livre': livre, "id":id})
+        else:
+            return render(request, 'livre/formulaireinstant.html', {'form': pForm, "id":id})
+
+
 
 
 
