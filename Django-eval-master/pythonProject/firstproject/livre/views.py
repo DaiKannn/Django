@@ -49,7 +49,7 @@ def delete(request, id):
 
 def accueil(request):
     liste = list(models.Bibliotheque.objects.all())
-    return render(request,"Bibliotheque/accueil.html",{"liste" : liste})
+    return render(request,"Bibliotheque/accueilcsgo.html",{"liste" : liste})
 
 def formulairebibliotheque(request):
     if request.method == "POST":
