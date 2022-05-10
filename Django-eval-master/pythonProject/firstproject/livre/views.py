@@ -61,7 +61,8 @@ def formulairebibliotheque(request):
 
 def affichebibliotheque(request, id):
     bibli = models.Bibliotheque.objects.get(pk=id)
-    return render(request, "Bibliotheque/affichebibliotheque.html", {"Bibliotheque": bibli})
+    liste=list(models.Livre.objects.filter(bibliotheque_id=id)),
+    return render(request, "Bibliotheque/affichebibliotheque.html", {"Bibliotheque": bibli,"liste":liste})
 
 def traitementbibliotheque(request):
     pForm = BibliothequeForm(request.POST)
