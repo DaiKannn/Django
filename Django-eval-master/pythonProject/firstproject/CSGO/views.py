@@ -31,27 +31,27 @@ def affichecsgo(request, id):
 
 
 
-# def update(request, id):
-#     CSGO = models.CSGO.objects.get(pk=id)
-#     form = CSGOForm(CSGO.dico())
-#     return render(request, "livre/formulaire.html", {"form": form, "id": id})
+def updatecsgo(request, id):
+     CSGO = models.CSGO.objects.get(pk=id)
+     form = CSGOForm(CSGO.dico())
+     return render(request, "csgo/formulairecsgo.html", {"form": form, "id": id})
 
 
-# #def updatetraitement(request, id):
-#     pform = CSGOForm(request.POST)
-#     if pform.is_valid():
-#         CSGO = pform.save(commit=False)
-#         CSGO.id = id
-#         CSGO.save()
-#         return HttpResponseRedirect("/livre/")
-#     else:
-#         return render(request, "livre/formulaire.html", {"form": pform, "id": id})
+def updatetraitementcsgo(request, id):
+     pform = CSGOForm(request.POST)
+     if pform.is_valid():
+         CSGO = pform.save(commit=False)
+         CSGO.id = id
+         CSGO.save()
+         return HttpResponseRedirect("/csgo/")
+     else:
+         return render(request, "csgo/formulairecsgo.html", {"form": pform, "id": id})
 
 
-# #def delete(request, id):
-#     CSGO = models.CSGO.objects.get(pk=id)
-#     CSGO.delete()
-#     return HttpResponseRedirect("/livre/")
+def deletecsgo(request, id):
+     CSGO = models.CSGO.objects.get(pk=id)
+     CSGO.delete()
+     return HttpResponseRedirect("/csgo/")
 
 def accueilmajor(request):
         liste = list(models.Major.objects.all())
