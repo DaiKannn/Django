@@ -7,10 +7,10 @@
 <body>
         {% if id != None %}
             <h1> Modif livre --{{id}}--</h1>
-            <form action="/livre/updatetraitementbibliotheque/{{id}}/" method="POST"/>
+            <form action="/csgo/updatetraitementcsgo/{{id}}/" method="POST"/>
         {% else %}
             <h1> Saisie d'une nouvelle bibliothèque universitaire </h1>
-            <form action="/livre/traitementbibliotheque/" method="POST">
+            <form action="/csgo/traitementcsgo/" method="POST">
         {% endif %}
 
         {% csrf_token %}

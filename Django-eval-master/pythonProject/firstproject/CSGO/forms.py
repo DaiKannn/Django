@@ -12,7 +12,7 @@ class CSGOForm(ModelForm):
             'date_parution' : _('date␣de␣parution'),
             'bibliotheque' : _("Bibliotheque Universitaire"),
             'nombres_pages' : _('nombres␣de␣pages'),
-            'resume' : _('Résumé')
+            'resume' : _('Résumé'),
         }
 
 class MajorForm(ModelForm):

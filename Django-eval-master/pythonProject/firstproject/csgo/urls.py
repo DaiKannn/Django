@@ -1,24 +1,13 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('accueilcsgo', views.accueilcsgo)
-
-
-
-
-
-
-
-
-
-
-    #path('formulaire', views.formulaire, name='formulaire'),
-    #path('traitement/', views.traitement),
-    #path("",views.index),
-   # path("affiche/<int:id>/",views.affiche),
-    #path("update/<int:id>/",views.update),
-    #path("updatetraitement/<int:id>/",views.updatetraitement),
-    #path("delete/<int:id>/",  views.delete),
+    path('accueilcsgo/', views.accueilcsgo),
+    path('formulairecsgo/', views.formulairecsgo, name='formulaire'),
+    path('traitementcsgo/', views.traitementcsgo),
+    path("affichecsgo/<int:id>/",views.affichecsgo),
+    path("updatecsgo/<int:id>/",views.updatecsgo),
+    path("updatetraitementcsgo/<int:id>/",views.updatetraitementcsgo),
+    path("deletecsgo/<int:id>/",  views.deletecsgo),
     #path("accueil/", views.accueil),
     #path("formulairebibliotheque/", views.formulairebibliotheque),
     #path("affichebibliotheque/<int:id>/", views.affichebibliotheque),
