@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang=fr>
+<head>
+    <meta charset="UTF-8">
+    <title>mon formulaire</title>
+</head>
+<body>
+            <h1> Modif livre --{{id}}--</h1>
+            <form action="/livre/traitementinstant/{{id}}/" method="POST"/>
+
+        {% csrf_token %}
+        {{ form.as_ul }}
+            <input type="submit" value="envoyer␣les␣données"\>
+    </form>
+</body>
+</html>
